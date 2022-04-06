@@ -1,0 +1,40 @@
+* {
+    transition: .3s linear;
+}
+.bg-header {
+    background-color: #a29bfe;
+    padding: 20px;
+}
+.add-task {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: dodgerblue;
+    top: 50px;
+    right: 30px;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    z-index: 1000;
+}
+.add-task::before {
+    content: '+';
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+.icon-list a{
+    margin-right: 15px;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+}
+.icon-list a:hover {
+    color: #a29bfe;
+}
+.icon-list a.active {
+    color: #a29bfe;
+}
