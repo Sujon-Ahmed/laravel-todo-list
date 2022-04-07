@@ -33,7 +33,7 @@
                                         <a href="{{ url('/task/delete', $task->id) }}" class="btn btn-danger btn-sm">Delete</a>
                                         @else 
                                         <a href="{{ url('/status/change',$task->id) }}" class="btn btn-success btn-sm">Done</a>
-                                        <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">Delete</a>
+                                        <a href="{{ url('/task/delete', $task->id) }}" class="btn btn-danger btn-sm">Delete</a>
                                         @endif
                                     </div>                                
                                 </div>
@@ -42,15 +42,11 @@
 
                         </div>
                     </ul>
-
-
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
-
-                    
+                    @endif                    
                 </div>
             </div>
         </div>
@@ -81,22 +77,5 @@
       </div>
     </div>
 </div>
-<!-- Modal for delete task-->
-<div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabelDelete" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabelDelete">Delete Conform Alert</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Are You Sure Permanently Delete This Task ?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
-          <a href="{{ url('/task/delete', $task->id) }}" class="btn btn-danger btn-sm">Delete</a>
-        </div>
-      </div>
-    </div>
-  </div>
+
 @endsection
