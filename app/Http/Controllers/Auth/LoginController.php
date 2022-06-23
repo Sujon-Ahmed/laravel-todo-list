@@ -40,6 +40,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+    // google login controller
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
@@ -47,11 +48,21 @@ class LoginController extends Controller
     public function handleGoogleCallback()
     {
         $user = Socialite::driver('google')->user();
-
-        // $user->token;
         $this->_registerOrLoginUser($user);
         return redirect()->route('home');
     }
+    // github login controller
+    public function redirectToGithub()
+    {
+        return Socialite::driver('github')->redirect();
+    }
+    public function handleGithubCallback()
+    {
+        $user = Socialite::driver('github')->user();
+        $this->_registerOrLoginUser($user);
+        return redirect()->route('home');
+    }
+
     protected function _registerOrLoginUser($data)
     {
         $user = User::where('email', '=', $data->email)->first();

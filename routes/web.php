@@ -29,3 +29,6 @@ Route::get('/task/delete/{id}', [TaskController::class, 'delete']);
 
 Route::get('login/google', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle')->name('google.login');
 Route::get('login/google/callback', 'App\Http\Controllers\Auth\LoginController@handleGoogleCallback');
+
+Route::get('login/github', 'App\Http\Controllers\Auth\LoginController@redirectToGithub')->name('github.login');
+Route::get('login/github/callback', 'App\Http\Controllers\Auth\LoginController@handleGithubCallback');
