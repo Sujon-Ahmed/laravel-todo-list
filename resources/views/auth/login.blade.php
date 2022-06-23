@@ -12,7 +12,7 @@
                         @csrf
                         <div class="row">
                             <div class="col-md-6 offset-md-4 d-grid">
-                                <a href="#" class="btn btn-danger btn-block mb-3"><i class="fab fa-google"></i> Login with Google</a>
+                                <a href="{{ route('google.login') }}" class="btn btn-danger btn-block mb-3"><i class="fab fa-google"></i> Login with Google</a>
                                 <a href="#" class="btn btn-primary btn-block mb-3"><i class="fab fa-facebook-f"></i> Login with Facebook</a>
                                 <a href="#" class="btn btn-dark btn-block mb-3"><i class="fab fa-github"></i> Login with Github</a>
                             </div>

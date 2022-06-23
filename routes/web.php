@@ -26,3 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/task/create', [TaskController::class, 'create']);
 Route::get('/status/change/{id}', [TaskController::class, 'status']);
 Route::get('/task/delete/{id}', [TaskController::class, 'delete']);
+
+Route::get('login/google', 'App\Http\Controllers\Auth\LoginController@redirectToGoogle')->name('google.login');
+Route::get('login/google/callback', 'App\Http\Controllers\Auth\LoginController@handleGoogleCallback');
